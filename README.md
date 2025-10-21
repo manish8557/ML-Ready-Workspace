@@ -89,6 +89,7 @@ The launcher will automatically:
 ```bash
 python launch.py
 ```
+After launching you get the tokenID for session which you can use to login. You can easily find it above the log section.
 
 ### 🌐 Accessing Services
 
