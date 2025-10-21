@@ -16,7 +16,10 @@ A complete, isolated **Machine Learning development environment** with everythin
 - 📊 **Development Tools** — Jupyter Lab, TensorBoard, Git integration  
 - 🚀 **One-Command Setup** — Automated configuration & launch  
 - 🛡️ **Safe & Isolated** — No system-wide conflicts  
-- 🔧 **Pre-Configured** — Optimized defaults for ML workflows  
+- 🔧 **Pre-Configured** — Optimized defaults for ML workflows
+
+## Also resolved the tesorboard issue "site can't be reached"
+-(it's not a real issue it's just port many a times not working/error, so i have already dealt and automated it)
 
 ---
 
