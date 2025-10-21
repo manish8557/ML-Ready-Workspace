@@ -1,0 +1,26 @@
+services:
+  ml-workspace:
+    build:
+      context: .
+      args:
+        username: ${ML_USER:-mluser}
+        userid: ${ML_UID:-1000}
+    container_name: ml-workspace
+    ports:
+      - "8888:8888"
+      - "6006:6006"
+    volumes:
+      - .:/home/${ML_USER:-mluser}/ml-project
+      - ./data:/home/${ML_USER:-mluser}/ml-project/codeBlocks/data
+      - ./models:/home/${ML_USER:-mluser}/ml-project/codeBlocks/models
+      - ./notebooks:/home/${ML_USER:-mluser}/ml-project/codeBlocks/notebooks
+      - ./scripts:/home/${ML_USER:-mluser}/ml-project/codeBlocks/scripts
+      - ~/.gitconfig:/home/${ML_USER:-mluser}/.gitconfig:ro 
+    environment:
+      - PYTHONPATH=/home/${ML_USER:-mluser}/ml-project
+      - GIT_USER_NAME=${GIT_USER_NAME:-ML Developer}
+      - GIT_USER_EMAIL=${GIT_USER_EMAIL:-ml.developer@example.com}
+    working_dir: /home/${ML_USER:-mluser}/ml-project
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
